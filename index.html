@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <!-- <body onkeydown="myFunction()"> -->
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            /* top: 70px; */
+        }
+    </style>
+    <body>
+        <img src="img.jpg" />
+
+        <script>
+            // function myFunction() {console.log('be5!!')
+
+            // };
+
+            var down = 0;
+            const eventTarget = document.querySelector("body");
+            var left = 0;
+            var right = 0;
+            eventTarget.addEventListener("keydown", function(event) {
+                console.log(event.keyCode);
+                if (event.keyCode === 83) {
+                    console.log("S");
+
+                    down += 20;
+
+                    document.querySelector("img").style.top = down;
+                }
+                // move down
+
+                // move left
+                if (event.keyCode === 65) {
+                    console.log("a");
+
+                    // left += 20;
+                    left -= 20;
+                    document.querySelector("img").style.left = left;
+                }
+                // move up
+                if (event.keyCode === 87) {
+                    console.log("w");
+
+                    // left += 20;
+                    down -= 20;
+                    document.querySelector("img").style.top = down;
+                }
+
+                // move right
+                if (event.keyCode === 68) {
+                    console.log("d");
+
+                    // right += 20;
+                    left += 20;
+                    document.querySelector("img").style.left = left;
+                }
+
+                console.log("event");
+            });
+        </script>
+    </body>
+</html>
